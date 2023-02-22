@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quiz</title>
+
+    <style>
+        body {
+            background-color: #aaa194;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            color: #F084B7;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h3 {
+            color: #F084B7;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h4 {
+            color: #F084B7;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+
+        form {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 50px auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin: 20px 0;
+            font-size: 20px;
+            color: #F084B7;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            background-color: #F5D0E1;
+        }
+
+        input[type="submit"] {
+            background-color: #219ea7;
+            color: #000000;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #395e96;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .resultado {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            position: center;
+            height: 100px;
+            justify-content: center;
+            align-items: flex-start;
+            color: #000000;
+
+        }
+
+        .botao {
+            background-color: #bd86b4;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .botao:hover {
+            background-color: #bd86b4;
+        }
+
+        .recompensa {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            font-size: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Quiz</h1>
+    <h1>Regrinhas pra tudo funcionar ok :D</h1>
+    <h3>São 5 perguntinhas, e como sou bonzinho vou dar uma dica para cada uma</h3>
+    <h3>As dicas só aparecem se você errar, uma pergunta um erro uma dica</h1>
+        <h3>Pode escrever tudo em mínuslo e sem acento</h3>
+
+        <h4>SE VOCÊ ACERTAR TODAS ALGO VAI ACONTECER</h4>
+
+        <form>
+            <label for="pergunta1">Pergunta <span style="color:green;">1</span>: I Have Crush on *** ?</label><br>
+            <input type="text" id="pergunta1" name="pergunta1"><br><br>
+            <button type="button" class="botao" onclick="verificarRespostas()">Enviar</button>
+
+            <label for="pergunta2">Pergunta <span style="color:orange;">2</span>: O que aconteceu no dia 15/09/2022
+                ?</label><br>
+            <input type="text" id="pergunta2" name="pergunta2"><br><br>
+            <button type="button" class="botao" onclick="verificarRespostas()">Enviar</button>
+
+            <label for="pergunta3">Pergunta <span style="color:yellow;">3</span>: Qual foi a nossa saga que mais demorou
+                terminar( Responda com " a saga das ******** ")?</label><br>
+            <input type="text" id="pergunta3" name="pergunta3"><br><br>
+            <button type="button" class="botao" onclick="verificarRespostas()">Enviar</button>
+
+            <label for="pergunta4">Pergunta <span style="color:blue;">4</span>: Quem é melhor no uno, Eu(edu) ou
+                Você(thally)?</label><br>
+            <input type="text" id="pergunta4" name="pergunta4"><br><br>
+            <button type="button" class="botao" onclick="verificarRespostas()">Enviar</button>
+
+            <label for="pergunta5">Pergunta <span style="color:red;">5</span>: Qual o suco que tem gosto de plástico?
+                "?</label><br>
+            <input type="text" id="pergunta5" name="pergunta5"><br><br>
+            <button type="button" class="botao" onclick="verificarRespostas()">Enviar</button>
+
+            <p class="recompensa" id="recompensa" style="display: none;"></p>
+
+
+        </form>
+
+        <p class="resultado" id="resultado"></p>
+
+        <script>
+            function verificarRespostas() {
+                var respostasCorretas = 0;
+
+                if (document.getElementById("pergunta1").value.toLowerCase() == "you") {
+                    respostasCorretas++;
+                } else {
+                    if (document.getElementById("pergunta1").value != "") {
+                        alert("Essa aqui nem precisa de dica mds, mt fácil.");
+                    }
+                }
+
+                if (document.getElementById("pergunta2").value.toLowerCase() == "sla") {
+                    respostasCorretas++;
+                } else {
+                    if (document.getElementById("pergunta2").value != "") {
+                        alert("As vezes a reSposta simpLesmente nÂo existe.");
+                    }
+                }
+
+                if (document.getElementById("pergunta3").value.toLowerCase() == "a saga das estrelas") {
+                    respostasCorretas++;
+                } else {
+                    if (document.getElementById("pergunta3").value != "") {
+                        alert("se você olhar pro céu vão existir várias brilhando.");
+                    }
+                }
+
+                if (document.getElementById("pergunta4").value == "edu") {
+                    respostasCorretas++;
+                } else {
+                    if (document.getElementById("pergunta4").value != "") {
+                        alert("A verdade dói, mas nós dois sabemos que vc é minha patinha.");
+                    }
+                }
+
+                if (document.getElementById("pergunta5").value.toLowerCase() == "suco de caju") {
+                    respostasCorretas++;
+                } else {
+                    if (document.getElementById("pergunta5").value != "") {
+                        alert("é um pseudo fruto e tem uma castanha.");
+                    }
+                }
+
+                document.getElementById("resultado").innerHTML = "Você acertou " + respostasCorretas + " de 5 questões.";
+
+                if (respostasCorretas == 5) {
+                    document.getElementById("recompensa").innerHTML = "Sua recompensa por acertar tudo é isso: 01101000 01110100 01110100 01110000 01110011 00111010 00101111 00101111 01101001 01110100 01110011 01100001 01110011 01110100 01100101 01110010 00101110 01100111 01101001 01110100 01101000 01110101 01100010 00101110 01101001 01101111 00101111 01010000 01110010 01101111 01101010 01100101 01110100 01101111 00101101 01010011 01100101 01101110 01101000 01100001 00101111 ";
+
+                    // Adiciona a mensagem de parabéns
+                    document.getElementById("recompensa").style.display = "block";
+                }
+
+
+
+            }
+        </script>
+</body>
+
+</html>
